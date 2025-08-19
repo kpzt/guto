@@ -1,3 +1,17 @@
+/* ========================= */
+/* VARIÁVEIS DE COR          */
+/* ========================= */
+:root {
+  --cor-background: linear-gradient(135deg, var(--cor-bg) 0%, #eceff1 100%);
+  --cor-secao: rgb(255, 255, 255);         /* fundo das seções */
+  --cor-detalhes: rgb(0, 70, 107);         /* botões, links */
+  --cor-detalhes-clara: rgb(0, 119, 182);  /* hover em botões, links */
+  --cor-topbar: rgba(2, 60, 136, 0.796);   /* barra superior */
+}
+
+/* ========================= */
+/* GLOBAL                    */
+/* ========================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,40 +20,24 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background: url('sua-imagem.jpg');
+  background-size: cover;
   color: #333;
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 15px 0;
-  background-color: #f1f1f1; /* fundo clarinho */
-  border-bottom: 1px solid #ddd;
-}
-
-.social-links a {
-  color: #072070; /* azul escuro, combina com sua top-bar */
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #1a73e8; /* azul mais vibrante ao passar o mouse */
-  text-decoration: underline;
-}
-
-
-/* Barra no Topo */
+/* ========================= */
+/* TOP-BAR                   */
+/* ========================= */
 .top-bar {
   position: sticky;
   top: 0;
   width: 80%;
   height: 80px;
-  background-color: rgba(7, 14, 112, 0.5);
+  background-color: var(--cor-topbar);
   margin: 0 auto;
 }
 
@@ -48,13 +46,13 @@ body {
   margin: 0;
 }
 
-.top-bar nav{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    font-size: 22px;
+.top-bar nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  font-size: 22px;
 }
 
 .top-bar nav a {
@@ -62,18 +60,19 @@ body {
   text-decoration: none;
 }
 
-/* Seções */
+/* ========================= */
+/* SEÇÕES                    */
+/* ========================= */
 .secoes {
-scroll-margin-top: 80px;
+  scroll-margin-top: 80px;
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--cor-secao);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos */
 .secoes h1 {
   font-size: 2em;
   margin-bottom: 15px;
@@ -101,13 +100,11 @@ scroll-margin-top: 80px;
   color: #666;
 }
 
-/* Parágrafos */
 .secoes p {
   margin-bottom: 15px;
   text-align: justify;
 }
 
-/* Links dentro das seções */
 .secoes a {
   color: #1a73e8;
   text-decoration: none;
@@ -117,15 +114,46 @@ scroll-margin-top: 80px;
   text-decoration: underline;
 }
 
-/* Seção perfil */
-.perfil{
+/* ========================= */
+/* PERFIL                    */
+/* ========================= */
+.perfil {
   display: flex;
   align-items: flex-start;
   gap: 20px;
 }
 
 .perfil img {
-  width: auto; 
+  width: auto;
   height: 50vh;
   object-fit: cover;
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+footer {
+  margin-top: auto;  /* empurra para o final da página */
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 15px 0;
+  background-color: var(--cor-secao);
+  border-top: 1px solid #ddd;
+}
+
+.social-links a {
+  color: var(--cor-detalhes);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--cor-detalhes-clara);
+  text-decoration: underline;
 }
