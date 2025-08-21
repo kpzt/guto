@@ -2,11 +2,11 @@
 /* VARIÁVEIS DE COR          */
 /* ========================= */
 :root {
-  --cor-background: linear-gradient(135deg, var(--cor-bg) 0%, #eceff1 100%);
-  --cor-secao: rgb(255, 255, 255);         /* fundo das seções */
-  --cor-detalhes: rgb(0, 70, 107);         /* botões, links */
-  --cor-detalhes-clara: rgb(0, 119, 182);  /* hover em botões, links */
-  --cor-topbar: rgba(2, 60, 136, 0.796);   /* barra superior */
+  --cor-background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  --cor-secao: rgba(15, 32, 39, 0.85);   /* fundo das seções estilizado */
+  --cor-detalhes: #1b98e0;               /* botões, links */
+  --cor-detalhes-clara: #eac435;         /* hover em botões, links */
+  --cor-topbar: #13293d;                 /* barra superior */
 }
 
 /* ========================= */
@@ -24,9 +24,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
   line-height: 1.6;
-  background: url('sua-imagem.jpg');
+  background: var(--cor-background);
   background-size: cover;
-  color: #333;
+  color: #f5f5f5;
 }
 
 /* ========================= */
@@ -56,8 +56,13 @@ body {
 }
 
 .top-bar nav a {
-  color: black;
+  color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-bar nav a:hover {
+  color: var(--cor-detalhes-clara);
 }
 
 /* ========================= */
@@ -70,47 +75,49 @@ body {
   padding: 20px;
   background-color: var(--cor-secao);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .secoes h1 {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #222;
+  color: #ffffff;
 }
 
 .secoes h2 {
   font-size: 1.5em;
   margin-top: 20px;
   margin-bottom: 10px;
-  color: #444;
+  color: var(--cor-detalhes);
 }
 
 .secoes h3 {
   font-size: 1.2em;
   margin-top: 15px;
   margin-bottom: 8px;
-  color: #555;
+  color: #ddd;
 }
 
 .secoes h4 {
   font-size: 1em;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #666;
+  color: #bbb;
 }
 
 .secoes p {
   margin-bottom: 15px;
   text-align: justify;
+  color: #f0f0f0;
 }
 
 .secoes a {
-  color: #1a73e8;
+  color: var(--cor-detalhes);
   text-decoration: none;
 }
 
 .secoes a:hover {
+  color: var(--cor-detalhes-clara);
   text-decoration: underline;
 }
 
@@ -127,6 +134,7 @@ body {
   width: auto;
   height: 50vh;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 /* ========================= */
@@ -143,7 +151,7 @@ footer {
   gap: 100px;
   padding: 15px 0;
   background-color: var(--cor-secao);
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333;
 }
 
 .social-links a {
